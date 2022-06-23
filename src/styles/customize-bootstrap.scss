@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+
+.form-control {
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid transparent;
+  &:focus {
+    border: 1px solid transparent;
+  }
+}
+
+.form-label {
+  font-family: 'Roboto', sans-serif;
+}
+
+.table thead th {
+  vertical-align: top;
+}

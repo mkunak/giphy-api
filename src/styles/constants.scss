@@ -1,0 +1,130 @@
+$headerSidePadding: 1rem;
+
+$sizes: (
+	defaultRadiusPx: 2px,
+	smallPopupWidth: 430px,
+	largePopupWidth: 920px,
+);
+
+$colors: ();
+
+$breakpoints: (
+	mobileS: 320px,
+	mobileM: 375px,
+	mobileL: 425px,
+	mobileXL: 570px,
+	tablet: 768px,
+	laptopS: 1024px,
+	laptopM: 1280px,
+	laptopL: 1366px,
+	laptop: 1440px,
+	desktopS: 1680px,
+	desktopM: 1920px,
+	desktopL: 2560px
+);
+
+$font-sizes: (
+	xss: 0.7rem,
+	xs: 0.9rem,
+	s: 1rem,
+	m: 1.2rem,
+	l: 1.4rem,
+	xl: 1.8rem,
+	xxl: 2rem
+);
+
+
+@function size($size-name) {
+	@return map-get($sizes, $size-name);
+}
+
+@function color($color-name) {
+	@return map-get($colors, $color-name);
+}
+
+@function breakpoint($point-size) {
+	@return map-get($breakpoints, $point-size);
+}
+
+@function fz($font-size) {
+	@return map-get($font-sizes, $font-size);
+}
+
+@function indent($size) {
+	@return $size * 8px;
+}
+
+
+@mixin text-one-row {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin font {
+	font-family: 'Titillium Web', sans-serif;
+  	font-style: normal;
+	font-size: fz(s);
+	font-weight: 400;
+}
+
+@mixin panel {
+	background: #fff;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+}
+
+@mixin desktop-up {
+	@media screen and (max-width: breakpoint(desktopL)) {
+		@content;
+	}
+}
+@mixin desktopM-up {
+	@media screen and (max-width: breakpoint(desktopM)) {
+		@content;
+	}
+}
+@mixin laptop-up {
+	@media screen and (max-width: breakpoint(laptop)) {
+		@content;
+	}
+}
+@mixin laptopL-up {
+	@media screen and (max-width: breakpoint(laptopL)) {
+		@content;
+	}
+}
+@mixin laptopM-up {
+	@media screen and (max-width: breakpoint(laptopM)) {
+		@content;
+	}
+}
+@mixin laptopS-up {
+	@media screen and (max-width: breakpoint(laptopS)) {
+		@content;
+	}
+}
+@mixin tablet-up {
+	@media screen and (max-width: breakpoint(tablet)) {
+		@content;
+	}
+}
+@mixin mobileXL-up {
+	@media screen and (max-width: breakpoint(mobileXL)) {
+		@content;
+	}
+}
+@mixin mobile-up {
+	@media screen and (max-width: breakpoint(mobileL)) {
+		@content;
+	}
+}
+@mixin mobileS-up {
+	@media screen and (max-width: breakpoint(mobileS)) {
+		@content;
+	}
+}
+@mixin landscape-up {
+	@media screen and (max-device-height: breakpoint(mobileL)) and (orientation: landscape) {
+		@content;
+	}
+}

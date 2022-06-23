@@ -1,0 +1,6 @@
+@import './colors/index.scss';
+
+.Toastify .Toastify__toast--warning .Toastify__toast-body{
+  color: $orange0d;
+  font-weight: 700;
+}
